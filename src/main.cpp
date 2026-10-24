@@ -169,7 +169,7 @@ int main()
          if (last != lastHit::PLAYER1 && player1.getGlobalBounds().intersects(ball.getGlobalBounds()))
          {
             playAudio(hitSound, audioOn);
-            ballDir.x = abs(ballDir.x);
+            ballDir.x = std::abs(ballDir.x);
             ballDir.y = rand() % 3 - 1;
             ballSpeedMult = std::min(ballSpeedMult * 1.05f, 3.f);
             last = lastHit::PLAYER1;
@@ -177,7 +177,7 @@ int main()
          else if (last != lastHit::PLAYER2 && player2.getGlobalBounds().intersects(ball.getGlobalBounds()))
          {
             playAudio(hitSound, audioOn);
-            ballDir.x = -abs(ballDir.x);
+            ballDir.x = -std::abs(ballDir.x);
             ballDir.y = rand() % 3 - 1;
             ballSpeedMult = std::min(ballSpeedMult * 1.05f, 3.f);
             last = lastHit::PLAYER2;
